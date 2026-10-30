@@ -16,6 +16,9 @@ Once ingested, the raw environmental metrics are structured into a standardized 
 4. How well do UAV drone and portable monitor readings calibrate with weather towers?
 5. Do regional microclimates differ across urban and rural NY counties?
 
+## Project Definition Data 
+Our team will organize the data collected from portable air monitors, drones, and weather towers into a database. The data will include CO2 levels, temperature, humidity, altitude, Our team will organize the data collected from portable air monitors, drones, and weather towers into a database. The data will have CO2 levels, temperature, humidity, altitude, location, and dates from several counties in New York State. Each row will have the information collected, and each column will show a different type of data. For example, CO2 levels will be measured in parts per million (ppm), temperature in Fahrenheit, altitude in feet, and humidity as a percentage. We will also include the dates and counties where the data was collected. This information will be organized by comparing all the data from month to month and throughout the seasons. We would like to answer three questions: How do CO2 levels and temperatures change throughout the seasons? In what ways can CO2 levels differ at different altitudes? What is the connection between temperature and humidity? This project will help us identify climate patterns in different areas of New York State and understand how the climate changes over time.
+
 ## DBMS Selection
 **PostgreSQL:** Selected for its robust numerical functions, native time-series handling, strict data integrity constraints, and PostGIS compatibility for future spatial analysis.
 
