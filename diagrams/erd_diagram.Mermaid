@@ -1,0 +1,26 @@
+erDiagram
+    County_Table ||--o{ Device_County : "1 to N"
+    Device_Table ||--o{ Device_County : "1 to N"
+    Device_Table ||--o{ Observation_Table : "1 to N"
+
+    County_Table {
+        int County_ID PK
+        string County_Name
+    }
+    Device_Table {
+        int Device_ID PK
+        string Device_Type
+    }
+    Device_County {
+        int Device_ID PK_FK
+        int County_ID PK_FK
+    }
+    Observation_Table {
+        int Observation_ID PK
+        int Device_ID FK
+        date date_month
+        int co2_ppm
+        decimal humidity
+        decimal Temperature
+        decimal Altitude
+    }
