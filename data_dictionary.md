@@ -15,7 +15,7 @@ This document serves as the official data dictionary for the system's database s
 
 ## Detailed Schema Definitions
 
-### 1. `County_Table`
+### 1. `counties`
 
 **Description:** Primary lookup table for geographic counties monitored by the system.
 
@@ -26,7 +26,7 @@ This document serves as the official data dictionary for the system's database s
 
 ---
 
-### 2. `Device_Table`
+### 2. `devices`
 
 **Description:** Contains metadata for physical monitoring hardware units.
 
@@ -37,7 +37,7 @@ This document serves as the official data dictionary for the system's database s
 
 ---
 
-### 3. `Device_County`
+### 3. `devices_counties`
 
 **Description:** Mapping/junction table defining which devices operate in which counties. Supports a many-to-many relationship.
 
@@ -48,7 +48,7 @@ This document serves as the official data dictionary for the system's database s
 
 ---
 
-### 4. `Observation_Table`
+### 4. `obsverations`
 
 **Description:** Contains environmental sensor readings collected by deployed devices.
 
