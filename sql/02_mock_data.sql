@@ -1,14 +1,14 @@
 -- Seed Data Script
-INSERT INTO County_Table (County_ID, County_Name) VALUES
+INSERT INTO counties (county_id, county_name) VALUES
 (1, 'Orange County'), (2, 'Albany County'), (3, 'Dutchess County'), (4, 'New York County'), (5, 'Erie County');
 
-INSERT INTO Device_Table (Device_ID, Device_Type) VALUES
+INSERT INTO devices (device_id, device_type) VALUES
 (101, 'Portable Air Monitor'), (102, 'UAV Drone'), (103, 'Weather Tower'), (104, 'Portable Air Monitor'), (105, 'UAV Drone');
 
-INSERT INTO Device_County (Device_ID, County_ID) VALUES
+INSERT INTO devices_counties (device_id, county_id) VALUES
 (101, 1), (101, 3), (102, 1), (102, 2), (102, 4), (103, 1), (104, 2), (104, 5), (105, 5), (105, 3);
 
-INSERT INTO Observation_Table (Observation_ID, Device_ID, date_month, co2_ppm, humidity, Temperature, Altitude) VALUES
+INSERT INTO observations (observation_id, device_id, date_month, co2_ppm, humidity, temperature, altitude) VALUES
 (1,  101, '2025-01-15', 422, 0.70, 31.5, 15.0),
 (2,  101, '2025-02-15', 424, 0.68, 33.2, 15.0),
 (3,  101, '2025-03-15', 421, 0.65, 42.8, 15.0),
