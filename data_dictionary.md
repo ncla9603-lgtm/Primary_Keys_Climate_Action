@@ -6,10 +6,10 @@ This document serves as the official data dictionary for the system's database s
 
 ## Entity Relationship Summary
 
-* **`County_Table`**: Stores geographic county entities.
-* **`Device_Table`**: Stores hardware monitoring device records.
-* **`Device_County`**: Junction table representing the many-to-many assignment between devices and counties.
-* **`Observation_Table`**: Stores time-series environmental measurements recorded by assigned devices.
+* **`counties`**: Stores geographic county entities.
+* **`devices`**: Stores hardware monitoring device records.
+* **`devices_counties`**: Junction table representing the many-to-many assignment between devices and counties.
+* **`observations`**: Stores time-series environmental measurements recorded by assigned devices.
 
 ---
 
