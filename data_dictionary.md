@@ -43,8 +43,8 @@ This document serves as the official data dictionary for the system's database s
 
 | Column Name | Data Type | Nullable? | Key / Constraint | Description |
 | :--- | :--- | :--- | :--- | :--- |
-| `device_id` | `INT` | No | Composite PK, Foreign Key (`Device_Table.Device_ID`) | References the unique device. `ON DELETE CASCADE` removes mapping if device record is deleted. |
-| `county_id` | `INT` | No | Composite PK, Foreign Key (`County_Table.County_ID`) | References the unique county. `ON DELETE RESTRICT` prevents county deletion if linked to a device. |
+| `device_id` | `INT` | No | Composite PK, Foreign Key (`devices.device_id`) | References the unique device. `ON DELETE CASCADE` removes mapping if device record is deleted. |
+| `county_id` | `INT` | No | Composite PK, Foreign Key (`counties.county_id`) | References the unique county. `ON DELETE RESTRICT` prevents county deletion if linked to a device. |
 
 ---
 
@@ -55,7 +55,7 @@ This document serves as the official data dictionary for the system's database s
 | Column Name | Data Type | Nullable? | Key / Constraint | Description |
 | :--- | :--- | :--- | :--- | :--- |
 | `observation_id` | `INT` | No | Primary Key | Unique identifier for an individual observation log. |
-| `device_id` | `INT` | No | Foreign Key (`Device_Table.Device_ID`) | Identifies the physical device that logged the measurement. `ON DELETE CASCADE` clears observations if device is removed. |
+| `device_id` | `INT` | No | Foreign Key (`devices.device_id`) | Identifies the physical device that logged the measurement. `ON DELETE CASCADE` clears observations if device is removed. |
 | `date_month` | `DATE` | No | None | Timestamp or date associated with the logged measurement. |
 | `co2_ppm` | `INT` | No | None | Carbon dioxide concentration reading measured in parts per million (PPM). |
 | `humidity` | `NUMERIC(3, 2)` | No | None | Relative humidity value formatted as a decimal ratio (max value: `9.99`, typical range `0.00` to `1.00`). |
