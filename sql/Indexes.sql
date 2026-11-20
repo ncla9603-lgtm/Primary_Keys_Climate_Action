@@ -3,10 +3,10 @@ CREATE INDEX idx_observation_device_id
 ON observations(device_id);
 
 -- Accelerates JOINs on the composite junction table Device_County
-CREATE INDEX idx_device_county_device_id 
+CREATE INDEX idx_devices_counties_device_id 
 ON devices_counties(device_id);
 
-CREATE INDEX idx_device_county_county_id 
+CREATE INDEX idx_devices_counties_county_id 
 ON devices_counties(county_id);
 
 -- Query support Indexes 
