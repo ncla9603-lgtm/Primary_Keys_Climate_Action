@@ -32,3 +32,15 @@ CREATE TABLE observations (
     Temperature NUMERIC(4, 1) NOT NULL,
     Observed_Altitude NUMERIC(6, 1) NULL -- Captured per reading for Drones/Handhelds
 );
+CREATE TABLE Operator (
+    Operator_ID INT PRIMARY KEY,
+    Operator_Name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Device_Operator (
+    Device_ID INT,
+    Operator_ID INT,
+    PRIMARY KEY (Device_ID, Operator_ID),
+    FOREIGN KEY (Device_ID) REFERENCES Device_Table(Device_ID),
+    FOREIGN KEY (Operator_ID) REFERENCES Operator(Operator_ID)
+);
