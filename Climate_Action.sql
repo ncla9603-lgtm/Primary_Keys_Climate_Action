@@ -2,13 +2,13 @@
 
 DROP TABLE IF EXISTS counties CASCADE;
 CREATE TABLE counties (
-    County_ID INT PRIMARY KEY,
-    County_Name VARCHAR(50) NOT NULL UNIQUE
+    county_id INT PRIMARY KEY,
+    county_name VARCHAR(50) NOT NULL UNIQUE
 );
 
 DROP TABLE IF EXISTS devices CASCADE;
 CREATE TABLE devices (
-    device_idINT PRIMARY KEY,
+    device_id INT PRIMARY KEY,
     device_type VARCHAR(50) NOT NULL
 );
 
