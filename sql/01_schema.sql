@@ -1,6 +1,6 @@
 -- Database Schema
 
-DROP TABLE IF EXISTS County_Table CASCADE;
+DROP TABLE IF EXISTS counties CASCADE;
 CREATE TABLE counties (
     county_id INT PRIMARY KEY,
     county_name VARCHAR(50) NOT NULL UNIQUE
@@ -12,7 +12,7 @@ CREATE TABLE devices (
     Device_Type VARCHAR(50) NOT NULL
 );
 
-DROP TABLE IF EXISTS Device_County CASCADE;
+DROP TABLE IF EXISTS devices_counties CASCADE;
 CREATE TABLE devices_counties (
     devices INT REFERENCES devices(device_id) ON DELETE CASCADE,
     county_id INT REFERENCES counties(county_id) ON DELETE RESTRICT,
@@ -22,7 +22,7 @@ CREATE TABLE devices_counties (
 DROP TABLE IF EXISTS observations CASCADE;
 CREATE TABLE observations (
     observation_id INT PRIMARY KEY,
-    device_id INT NOT NULL REFERENCES Device_Table(Device_ID) ON DELETE CASCADE,
+    device_id INT NOT NULL REFERENCES devices(device_id) ON DELETE CASCADE,
     date_month DATE NOT NULL,
     co2_ppm INT NOT NULL,
     humidity NUMERIC(3, 2) NOT NULL,

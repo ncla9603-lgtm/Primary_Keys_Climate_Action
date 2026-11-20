@@ -1,28 +1,28 @@
 -- Updated Schema (Fully Normalized)
-CREATE TABLE counties (
+CREATE TABLE County_Table (
     County_ID INT PRIMARY KEY,
     County_Name VARCHAR(50) NOT NULL UNIQUE
 );
 
-CREATE TABLE d (
+CREATE TABLE Device_Type_Table (
     Device_Type_ID INT PRIMARY KEY,
     Device_Type_Name VARCHAR(50) NOT NULL UNIQUE -- 'Handheld Air Monitor', 'UAV Drone', 'Weather Tower'
 );
 
-CREATE TABLE devices(
+CREATE TABLE Device_Table (
     Device_ID INT PRIMARY KEY,
     Device_Type_ID INT NOT NULL REFERENCES Device_Type_Table(Device_Type_ID),
     Fixed_Altitude NUMERIC(6, 1) NULL -- Set for Weather Towers; NULL for mobile units (Drones/Handhelds)
 );
 
-CREATE TABLE devices_counties (
+CREATE TABLE Device_County (
     Device_ID INT REFERENCES Device_Table(Device_ID) ON DELETE CASCADE,
     County_ID INT REFERENCES County_Table(County_ID) ON DELETE RESTRICT,
     Assigned_Date DATE NOT NULL,
     PRIMARY KEY (Device_ID, County_ID, Assigned_Date)
 );
 
-CREATE TABLE observations (
+CREATE TABLE Observation_Table (
     Observation_ID INT PRIMARY KEY,
     Device_ID INT NOT NULL REFERENCES Device_Table(Device_ID) ON DELETE CASCADE,
     County_ID INT NOT NULL REFERENCES County_Table(County_ID),
@@ -36,7 +36,6 @@ CREATE TABLE Operator (
     Operator_ID INT PRIMARY KEY,
     Operator_Name VARCHAR(100) NOT NULL
 );
-
 CREATE TABLE Device_Operator (
     Device_ID INT,
     Operator_ID INT,
