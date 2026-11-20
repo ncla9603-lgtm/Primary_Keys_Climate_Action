@@ -4,7 +4,7 @@ CREATE TABLE counties (
     County_Name VARCHAR(50) NOT NULL UNIQUE
 );
 
-CREATE TABLE d (
+CREATE TABLE device_type (
     Device_Type_ID INT PRIMARY KEY,
     Device_Type_Name VARCHAR(50) NOT NULL UNIQUE -- 'Handheld Air Monitor', 'UAV Drone', 'Weather Tower'
 );
