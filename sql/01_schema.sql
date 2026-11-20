@@ -8,8 +8,8 @@ CREATE TABLE counties (
 
 DROP TABLE IF EXISTS devices CASCADE;
 CREATE TABLE devices (
-    Device_ID INT PRIMARY KEY,
-    Device_Type VARCHAR(50) NOT NULL
+    device_id INT PRIMARY KEY,
+    device_type VARCHAR(50) NOT NULL
 );
 
 DROP TABLE IF EXISTS devices_counties CASCADE;
