@@ -1,7 +1,7 @@
 erDiagram
     County_Table ||--o{ Device_County : "1 to N"
-    Device_Table ||--o{ Device_County : "1 to N"
     Device_Table ||--o{ Observation_Table : "1 to N"
+    Device_Table }o--o{ Operator : "M to N"
 
     County_Table {
         int County_ID PK
@@ -12,8 +12,8 @@ erDiagram
         string Device_Type
     }
     Device_County {
-        int Device_ID PK_FK
-        int County_ID PK_FK
+        int Device_ID FK
+        int County_ID PK
     }
     Observation_Table {
         int Observation_ID PK
@@ -23,4 +23,8 @@ erDiagram
         decimal humidity
         decimal Temperature
         decimal Altitude
+    }
+    Operator {
+        int Operator_ID PK
+        string Operator_Name
     }
